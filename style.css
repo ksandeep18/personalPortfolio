@@ -9,6 +9,17 @@ body {
   line-height: 1.6;
 }
 
+body, section, .card, .navbar, .lead, h1, h2, h3, h4, h5, h6, p, a, li, span, div {
+  font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+  font-size: 1.25rem !important;
+  font-weight: 300 !important;
+}
+
+.lead {
+  font-size: 1.25rem;
+  font-weight: 300;
+}
+
 /*-----------------------------------
   Navbar
 -----------------------------------*/
