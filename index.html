@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sandeep Kumar Portfolio</title>
+  <!-- Bootstrap CSS CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+body {
+  scroll-behavior: smooth;
+  background-color: #f8f9fa;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #212529;
+  line-height: 1.6;
+}
+
+.navbar {
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12);
+  transition: background-color 0.3s ease;
+}
+
+/* Sections */
+section {
+  background-color: white !important;
+  color: #212529;
+  padding: 70px 0;
+  scroll-margin-top: 70px; /* for fixed navbar offset */
+}
+
+/* Cards */
+.card {
+  background-color: white !important;
+  color: #212529 !important;
+  border: 1px solid #dee2e6;
+  box-shadow:
+    0 2px 4px rgba(0, 0, 0, 0.04),
+    0 4px 8px rgba(0, 0, 0, 0.08);
+  border-radius: 0.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow:
+    0 6px 12px rgba(0, 0, 0, 0.1),
+    0 12px 24px rgba(0, 0, 0, 0.12);
+}
+
+/* Links */
+a.text-decoration-none {
+  color: #0d6efd; /* Bootstrap primary */
+  font-weight: 500;
+  transition: color 0.25s ease;
+}
+a.text-decoration-none:hover {
+  color: #0a58ca;
+  text-decoration: underline;
+}
+
+/* Badges */
+.badge.bg-primary { background-color: #0d6efd; }
+.badge.bg-success { background-color: #198754; }
+.badge.bg-warning { background-color: #ffc107; color: #212529; }
+.badge.bg-info { background-color: #0dcaf0; color: #212529; }
+.badge {
+  font-weight: 600;
+  padding: 0.45em 0.85em;
+  font-size: 0.9rem;
+  border-radius: 0.35rem;
+  transition: background-color 0.3s ease;
+}
+
+/* Carousel Container */
+#portfolioCarousel {
+  background: #ffffff;
+  border-radius: 0.75rem;
+  padding: 3rem 3.5rem;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.10);
+  max-width: 900px;
+  margin: auto;
+  transition: box-shadow 0.3s ease;
+}
+#portfolioCarousel:hover {
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Carousel Text */
+#portfolioCarousel .carousel-item h3,
+#portfolioCarousel .carousel-item p,
+#portfolioCarousel .carousel-item ul {
+  color: #212529;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  line-height: 1.5;
+}
+
+/* Carousel List */
+#portfolioCarousel .carousel-item ul {
+  margin-top: 1rem;
+  padding-left: 1.5rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+#portfolioCarousel .carousel-item ul li {
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+  list-style-type: "✔ ";
+  list-style-position: inside;
+  color: #0d6efd;
+}
+
+/* Buttons - primary */
+#portfolioCarousel .btn-primary {
+  background-color: #0d6efd;
+  border-color: #0d6efd;
+  color: #fff;
+  font-weight: 600;
+  padding: 0.65rem 1.4rem;
+  font-size: 1.1rem;
+  border-radius: 0.4rem;
+  box-shadow: 0 2px 10px rgba(13, 110, 253, 0.4);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+#portfolioCarousel .btn-primary:hover,
+#portfolioCarousel .btn-primary:focus {
+  background-color: #0a58ca;
+  border-color: #0a58ca;
+  box-shadow: 0 4px 14px rgba(10, 88, 202, 0.7);
+  color: #fff;
+  outline: none;
+}
+
+/* Buttons - outline warning */
+#portfolioCarousel .btn-outline-warning {
+  color: #ffc107;
+  border-color: #ffc107;
+  font-weight: 600;
+  font-size: 1.05rem;
+  padding: 0.55rem 1.2rem;
+  border-radius: 0.4rem;
+  transition: all 0.3s ease;
+}
+#portfolioCarousel .btn-outline-warning:hover,
+#portfolioCarousel .btn-outline-warning:focus {
+  background-color: #ffc107;
+  color: #212529;
+  border-color: #ffc107;
+  box-shadow: 0 0 12px rgba(255, 193, 7, 0.6);
+  outline: none;
+}
+
+/* Carousel indicators */
+.carousel-indicators button {
+  background-color: #0d6efd;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  margin: 0 6px;
+}
+.carousel-indicators .active {
+  background-color: #0a58ca;
+  opacity: 1;
+}
+
+/* Carousel controls - visible on white bg */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
+  width: 44px;
+  height: 44px;
+}
+
+/* Smooth scroll offset for fixed navbar */
+html {
+  scroll-padding-top: 70px;
+}
+    
+  </style>
+  <!-- Bootstrap Icons CDN -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#home">Sandeep Kumar</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto gap-3">
+          <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#achievements">Achievements</a></li>
+          <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projects">Projects & Internships</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Home Section with Carousel -->
+  <section id="home">
+    <div class="container text-center">
+      <h2 class="mb-5 fw-bold">Welcome to My Portfolio</h2>
+
+      <div id="portfolioCarousel" class="carousel slide shadow-sm rounded" data-bs-ride="carousel" data-bs-interval="5000" style="max-width: 900px; margin: auto;">
+        <div class="carousel-inner">
+
+          <!-- Slide 1 -->
+          <div class="carousel-item active p-5">
+            <h3 class="fw-bold">Sandeep Kumar</h3>
+            <p class="lead">Mechanical Engineering Student | Data Science Enthusiast | Web Developer</p>
+            <p>Explore my work and skills across engineering and data science domains.</p>
+            <a href="#projects" class="btn btn-warning">View Projects</a>
+          </div>
+
+          <!-- Slide 2 -->
+          <div class="carousel-item p-5">
+            <h3 class="fw-bold">Achievements</h3>
+            <ul class="list-unstyled text-start" style="max-width: 600px; margin:auto;">
+              <li>✔ Designed the official website for ICTSE-2026 Conference</li>
+              <li>✔ Secured S Grade in MAD1 Project, IIT Madras</li>
+              <li>✔ Completed Oracle Cloud Generative AI course</li>
+            </ul>
+            <a href="#achievements" class="btn btn-warning">See More Achievements</a>
+          </div>
+
+          <!-- Slide 3 -->
+          <div class="carousel-item p-5">
+            <h3 class="fw-bold">Get in Touch</h3>
+            <p>Feel free to contact me for collaborations, internships, or queries.</p>
+            <a href="#contact" class="btn btn-warning me-3">Contact Me</a>
+            <a href="mailto:ksandeepkumar34567@gmail.com" class="btn btn-outline-warning text-white">Email</a>
+          </div>
+
+        </div>
+
+        <!-- Carousel Controls -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#portfolioCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#portfolioCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+
+        <!-- Carousel Indicators -->
+        <div class="carousel-indicators mt-3">
+          <button type="button" data-bs-target="#portfolioCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#portfolioCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#portfolioCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Achievements Section -->
+  <section id="achievements" class="py-5">
+    <div class="container">
+      <h2 class="mb-5 text-center">Achievements</h2>
+      <div class="row row-cols-1 row-cols-md-2 g-4">
+        <div class="col">
+          <div class="card shadow-sm h-100">
+            <div class="card-body">
+              <h5 class="card-title">ICTSE-2026 Website Design</h5>
+              <p class="card-text">Designed the official website for the Department’s International Conference ICTSE-2026.</p>
+              <span class="badge bg-primary">Web Development</span>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm h-100">
+            <div class="card-body">
+              <h5 class="card-title">MAD1 Project - IIT Madras</h5>
+              <p class="card-text">Secured S Grade in the MAD1 Project, showcasing excellence in design and implementation.</p>
+              <span class="badge bg-success">Academic</span>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm h-100">
+            <div class="card-body">
+              <h5 class="card-title">Oracle Cloud Infrastructure</h5>
+              <p class="card-text">Completed the Generative AI course from Oracle University to strengthen cloud computing skills.</p>
+              <span class="badge bg-warning text-dark">Certification</span>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm h-100">
+            <div class="card-body">
+              <h5 class="card-title">ToolTracker Project</h5>
+              <p class="card-text">Built a tool tracking system for club management, deployed on Render platform.</p>
+              <span class="badge bg-info text-dark">Project</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Education Section -->
+  <section id="education" class="py-5">
+    <div class="container">
+      <h2 class="mb-5 text-center">Education</h2>
+      <div class="row row-cols-1 row-cols-md-3 g-4">
+        <div class="col">
+          <div class="card h-100 border-primary shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title">NIT Warangal</h5>
+              <h6 class="card-subtitle mb-2 text-muted">B.Tech Mechanical Engineering (2026)</h6>
+              <p class="card-text">CGPA: 7.5</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100 border-success shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title">IIT Madras</h5>
+              <h6 class="card-subtitle mb-2 text-muted">BS Data Science & Programming (2026)</h6>
+              <p class="card-text">CGPA: 7.43</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100 border-warning shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title">FIITJEE</h5>
+              <h6 class="card-subtitle mb-2 text-muted">Intermediate Board, Telangana (2022)</h6>
+              <p class="card-text">Percentage: 97.1%</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects & Internships Section -->
+  <section id="projects" class="py-5">
+    <div class="container">
+      <h2 class="mb-5 text-center">Projects & Internships</h2>
+      <div class="row row-cols-1 row-cols-md-2 g-4">
+        <div class="col">
+          <div class="card h-100 shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title">Mouri Tech Internship</h5>
+              <h6 class="card-subtitle mb-2 text-muted">May 2025 - July 2025</h6>
+              <ul>
+                <li>Developed second-hand product buying/selling platform remotely.</li>
+                <li>Achieved 90%+ accuracy for fake image and age detection using CNN.</li>
+                <li>Built resale price prediction model with R² = 0.87.</li>
+              </ul>
+              <a href="https://mouri-tech.com" target="_blank" class="btn btn-primary btn-sm mt-3">Visit Company</a>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100 shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title">Quiz Master</h5>
+              <h6 class="card-subtitle mb-2 text-muted">Jan 2025 - Mar 2025</h6>
+              <ul>
+                <li>Role-based web app using Flask, Jinja2, SQLite, SQLAlchemy.</li>
+                <li>Optimized backend for faster data retrieval and page loads.</li>
+              </ul>
+              <a href="https://github.com/ksandeep18/quiz-master" target="_blank" class="btn btn-primary btn-sm mt-3">View Project</a>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100 shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title">Bank Management System</h5>
+              <h6 class="card-subtitle mb-2 text-muted">Dec 2024 - Jan 2025</h6>
+              <ul>
+                <li>Developed core banking system backend with Python & SQLite.</li>
+                <li>Designed normalized relational database schema.</li>
+              </ul>
+              <a href="https://github.com/ksandeep18/bank-management-system" target="_blank" class="btn btn-primary btn-sm mt-3">View Project</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-5">
+    <div class="container">
+      <h2 class="mb-5 text-center text-white">Contact Me</h2>
+      <div class="row justify-content-center g-4">
+        <!-- Phone Card -->
+        <div class="col-12 col-md-4">
+          <div class="card bg-white text-dark h-100 shadow-sm">
+            <div class="card-body text-center">
+              <h5 class="card-title">Phone</h5>
+              <p class="card-text fs-5">+91 9032548457</p>
+            </div>
+          </div>
+        </div>
+        <!-- Emails Card -->
+        <div class="col-12 col-md-4">
+          <div class="card bg-white text-dark h-100 shadow-sm">
+            <div class="card-body text-center">
+              <h5 class="card-title">Emails</h5>
+              <p class="card-text">
+                <a href="mailto:ksandeepkumar34567@gmail.com" class="text-decoration-none text-primary">ksandeepkumar34567@gmail.com</a><br />
+                <a href="mailto:ks22meb0a24@student.nitw.ac.in" class="text-decoration-none text-primary">ks22meb0a24@student.nitw.ac.in</a>
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- Links Card -->
+        <div class="col-12 col-md-4">
+          <div class="card bg-white text-dark h-100 shadow-sm">
+            <div class="card-body text-center">
+              <h5 class="card-title">Find Me Online</h5>
+              <p class="card-text">
+                <a href="https://github.com/ksandeep18" target="_blank" class="text-decoration-none text-primary">GitHub</a><br />
+                <a href="https://www.linkedin.com/in/sandeep-kumar-sk-/" target="_blank" class="text-decoration-none text-primary">LinkedIn</a><br />
+                <a href="https://leetcode.com/u/S___K___7/" target="_blank" class="text-decoration-none text-primary">LeetCode</a><br />
+                <a href="https://tool-tracker-front.onrender.com" target="_blank" class="text-decoration-none text-primary">ToolTracker Project</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bootstrap JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
