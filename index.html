@@ -6,184 +6,85 @@
   <title>Sandeep Kumar Portfolio</title>
   <!-- Bootstrap CSS CDN -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <style>
-body {
-  scroll-behavior: smooth;
-  background-color: #f8f9fa;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: #212529;
-  line-height: 1.6;
-}
-
-.navbar {
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12);
-  transition: background-color 0.3s ease;
-}
-
-/* Sections */
-section {
-  background-color: white !important;
-  color: #212529;
-  padding: 70px 0;
-  scroll-margin-top: 70px; /* for fixed navbar offset */
-}
-
-/* Cards */
-.card {
-  background-color: white !important;
-  color: #212529 !important;
-  border: 1px solid #dee2e6;
-  box-shadow:
-    0 2px 4px rgba(0, 0, 0, 0.04),
-    0 4px 8px rgba(0, 0, 0, 0.08);
-  border-radius: 0.5rem;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.card:hover {
-  transform: translateY(-6px);
-  box-shadow:
-    0 6px 12px rgba(0, 0, 0, 0.1),
-    0 12px 24px rgba(0, 0, 0, 0.12);
-}
-
-/* Links */
-a.text-decoration-none {
-  color: #0d6efd; /* Bootstrap primary */
-  font-weight: 500;
-  transition: color 0.25s ease;
-}
-a.text-decoration-none:hover {
-  color: #0a58ca;
-  text-decoration: underline;
-}
-
-/* Badges */
-.badge.bg-primary { background-color: #0d6efd; }
-.badge.bg-success { background-color: #198754; }
-.badge.bg-warning { background-color: #ffc107; color: #212529; }
-.badge.bg-info { background-color: #0dcaf0; color: #212529; }
-.badge {
-  font-weight: 600;
-  padding: 0.45em 0.85em;
-  font-size: 0.9rem;
-  border-radius: 0.35rem;
-  transition: background-color 0.3s ease;
-}
-
-/* Carousel Container */
-#portfolioCarousel {
-  background: #ffffff;
-  border-radius: 0.75rem;
-  padding: 3rem 3.5rem;
-  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.10);
-  max-width: 900px;
-  margin: auto;
-  transition: box-shadow 0.3s ease;
-}
-#portfolioCarousel:hover {
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
-}
-
-/* Carousel Text */
-#portfolioCarousel .carousel-item h3,
-#portfolioCarousel .carousel-item p,
-#portfolioCarousel .carousel-item ul {
-  color: #212529;
-  font-weight: 500;
-  letter-spacing: 0.01em;
-  line-height: 1.5;
-}
-
-/* Carousel List */
-#portfolioCarousel .carousel-item ul {
-  margin-top: 1rem;
-  padding-left: 1.5rem;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-}
-#portfolioCarousel .carousel-item ul li {
-  margin-bottom: 0.5rem;
-  font-size: 1.1rem;
-  list-style-type: "✔ ";
-  list-style-position: inside;
-  color: #0d6efd;
-}
-
-/* Buttons - primary */
-#portfolioCarousel .btn-primary {
-  background-color: #0d6efd;
-  border-color: #0d6efd;
-  color: #fff;
-  font-weight: 600;
-  padding: 0.65rem 1.4rem;
-  font-size: 1.1rem;
-  border-radius: 0.4rem;
-  box-shadow: 0 2px 10px rgba(13, 110, 253, 0.4);
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
-}
-#portfolioCarousel .btn-primary:hover,
-#portfolioCarousel .btn-primary:focus {
-  background-color: #0a58ca;
-  border-color: #0a58ca;
-  box-shadow: 0 4px 14px rgba(10, 88, 202, 0.7);
-  color: #fff;
-  outline: none;
-}
-
-/* Buttons - outline warning */
-#portfolioCarousel .btn-outline-warning {
-  color: #ffc107;
-  border-color: #ffc107;
-  font-weight: 600;
-  font-size: 1.05rem;
-  padding: 0.55rem 1.2rem;
-  border-radius: 0.4rem;
-  transition: all 0.3s ease;
-}
-#portfolioCarousel .btn-outline-warning:hover,
-#portfolioCarousel .btn-outline-warning:focus {
-  background-color: #ffc107;
-  color: #212529;
-  border-color: #ffc107;
-  box-shadow: 0 0 12px rgba(255, 193, 7, 0.6);
-  outline: none;
-}
-
-/* Carousel indicators */
-.carousel-indicators button {
-  background-color: #0d6efd;
-  opacity: 0.6;
-  transition: opacity 0.3s ease;
-  width: 14px;
-  height: 14px;
-  border-radius: 50%;
-  margin: 0 6px;
-}
-.carousel-indicators .active {
-  background-color: #0a58ca;
-  opacity: 1;
-}
-
-/* Carousel controls - visible on white bg */
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
-  background-color: rgba(0, 0, 0, 0.5);
-  border-radius: 50%;
-  box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
-  width: 44px;
-  height: 44px;
-}
-
-/* Smooth scroll offset for fixed navbar */
-html {
-  scroll-padding-top: 70px;
-}
-    
-  </style>
   <!-- Bootstrap Icons CDN -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+  <style>
+    /* Home section (carousel) keeps image background */
+    #home {
+      background: url('coursel image.jpg') center center/cover no-repeat fixed, #181c24 !important;
+      color: #fff;
+      position: relative;
+    }
+    #home::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: linear-gradient(120deg, rgba(24,28,36,0.7) 60%, rgba(24,28,36,0.3) 100%);
+      z-index: 0;
+      pointer-events: none;
+    }
+    #home > * {
+      position: relative;
+      z-index: 1;
+    }
+    /* Other sections: solid white bg, dark text */
+    section:not(#home) {
+      background: #fff !important;
+      color: #232a36;
+      position: relative;
+    }
+    section:not(#home)::before { display: none; }
+    /* Cards in non-home sections: solid white bg, dark text */
+    section:not(#home) .card {
+      background: #fff !important;
+      color: #232a36 !important;
+      border: 1.5px solid #000 !important;
+      border-radius: .5rem;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.04), 0 4px 8px rgba(0,0,0,0.08);
+      position: relative;
+      overflow: hidden;
+    }
+    section:not(#home) .card::before { display: none; }
+    section:not(#home) .card > * { color: #232a36 !important; }
+    /* Navbar white bg, black text */
+    .navbar {
+      background: #fff !important;
+      color: #232a36 !important;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.12);
+    }
+    .navbar .navbar-brand,
+    .navbar .nav-link {
+      color: #232a36 !important;
+    }
+    .navbar .nav-link.active {
+      font-weight: bold;
+      color: #0d6efd !important;
+    }
+    .navbar-toggler {
+      border-color: #232a36;
+    }
+    .navbar-toggler-icon {
+      background-image: none;
+      border: 2px solid #232a36;
+      border-radius: 2px;
+      width: 1.5em;
+      height: 1.5em;
+      position: relative;
+    }
+    .navbar-toggler-icon:after {
+      content: '';
+      display: block;
+      width: 1em;
+      height: 2px;
+      background: #232a36;
+      position: absolute;
+      top: 50%;
+      left: 25%;
+      transform: translateY(-50%);
+    }
+  </style>
 </head>
+
 <body>
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
@@ -214,58 +115,50 @@ html {
 
   <!-- Home Section with Carousel -->
   <section id="home">
-    <div class="container text-center">
-      <h2 class="mb-5 fw-bold">Welcome to My Portfolio</h2>
-
-      <div id="portfolioCarousel" class="carousel slide shadow-sm rounded" data-bs-ride="carousel" data-bs-interval="5000" style="max-width: 900px; margin: auto;">
-        <div class="carousel-inner">
-
-          <!-- Slide 1 -->
-          <div class="carousel-item active p-5">
-            <h3 class="fw-bold">Sandeep Kumar</h3>
-            <p class="lead">Mechanical Engineering Student | Data Science Enthusiast | Web Developer</p>
-            <p>Explore my work and skills across engineering and data science domains.</p>
-            <a href="#projects" class="btn btn-warning">View Projects</a>
+    <div id="portfolioCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="4000">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#portfolioCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#portfolioCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#portfolioCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
+      <div class="carousel-inner">
+        <!-- Slide 1 -->
+        <div class="carousel-item active position-relative">
+          <img src="coursel image.jpg" alt="carousel background" class="position-absolute top-0 start-0 w-100 h-100" style="object-fit:cover; z-index:0;" />
+          <div class="carousel-overlay position-absolute top-0 start-0 w-100 h-100" style="background: linear-gradient(120deg, rgba(24,28,36,0.7) 60%, rgba(24,28,36,0.3) 100%); z-index:1;"></div>
+          <div class="d-flex flex-column justify-content-center align-items-center min-vh-100 w-100 position-relative" style="background:transparent; z-index:2;">
+            <h1 class="display-3 fw-bold mb-3 text-white">Hi, I'm Sandeep</h1>
+            <div id="typewriter" class="typewriter mb-3 text-white"></div>
+            <p class="lead text-white">Welcome to my portfolio website</p>
           </div>
-
-          <!-- Slide 2 -->
-          <div class="carousel-item p-5">
-            <h3 class="fw-bold">Achievements</h3>
-            <ul class="list-unstyled text-start" style="max-width: 600px; margin:auto;">
-              <li>✔ Designed the official website for ICTSE-2026 Conference</li>
-              <li>✔ Secured S Grade in MAD1 Project, IIT Madras</li>
-              <li>✔ Completed Oracle Cloud Generative AI course</li>
-            </ul>
-            <a href="#achievements" class="btn btn-warning">See More Achievements</a>
-          </div>
-
-          <!-- Slide 3 -->
-          <div class="carousel-item p-5">
-            <h3 class="fw-bold">Get in Touch</h3>
-            <p>Feel free to contact me for collaborations, internships, or queries.</p>
-            <a href="#contact" class="btn btn-warning me-3">Contact Me</a>
-            <a href="mailto:ksandeepkumar34567@gmail.com" class="btn btn-outline-warning text-white">Email</a>
-          </div>
-
         </div>
-
-        <!-- Carousel Controls -->
-        <button class="carousel-control-prev" type="button" data-bs-target="#portfolioCarousel" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#portfolioCarousel" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
-
-        <!-- Carousel Indicators -->
-        <div class="carousel-indicators mt-3">
-          <button type="button" data-bs-target="#portfolioCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-          <button type="button" data-bs-target="#portfolioCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-          <button type="button" data-bs-target="#portfolioCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        <!-- Slide 2 -->
+        <div class="carousel-item position-relative">
+          <img src="coursel image.jpg" alt="carousel background" class="position-absolute top-0 start-0 w-100 h-100" style="object-fit:cover; z-index:0;" />
+          <div class="carousel-overlay position-absolute top-0 start-0 w-100 h-100" style="background: linear-gradient(120deg, rgba(24,28,36,0.7) 60%, rgba(24,28,36,0.3) 100%); z-index:1;"></div>
+          <div class="d-flex flex-column justify-content-center align-items-center min-vh-100 w-100 position-relative" style="background:transparent; z-index:2;">
+            <h1 class="display-3 fw-bold mb-3 text-white">Projects & Internships</h1>
+            <p class="lead text-white">Explore my hands-on work and real-world experience.</p>
+          </div>
+        </div>
+        <!-- Slide 3 -->
+        <div class="carousel-item position-relative">
+          <img src="coursel image.jpg" alt="carousel background" class="position-absolute top-0 start-0 w-100 h-100" style="object-fit:cover; z-index:0;" />
+          <div class="carousel-overlay position-absolute top-0 start-0 w-100 h-100" style="background: linear-gradient(120deg, rgba(24,28,36,0.7) 60%, rgba(24,28,36,0.3) 100%); z-index:1;"></div>
+          <div class="d-flex flex-column justify-content-center align-items-center min-vh-100 w-100 position-relative" style="background:transparent; z-index:2;">
+            <h1 class="display-3 fw-bold mb-3 text-white">Contact Me</h1>
+            <p class="lead text-white">Let's connect and collaborate on exciting opportunities!</p>
+          </div>
         </div>
       </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#portfolioCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#portfolioCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
     </div>
   </section>
 
@@ -305,9 +198,6 @@ html {
           <div class="card shadow-sm h-100">
             <div class="card-body">
               <h5 class="card-title">ToolTracker Project</h5>
-              <p class="card-text">Built a tool tracking system for club management, deployed on Render platform.</p>
-              <span class="badge bg-info text-dark">Project</span>
-            </div>
           </div>
         </div>
       </div>
@@ -350,100 +240,243 @@ html {
     </div>
   </section>
 
-  <!-- Projects & Internships Section -->
-  <section id="projects" class="py-5">
-    <div class="container">
-      <h2 class="mb-5 text-center">Projects & Internships</h2>
-      <div class="row row-cols-1 row-cols-md-2 g-4">
-        <div class="col">
-          <div class="card h-100 shadow-sm">
-            <div class="card-body">
-              <h5 class="card-title">Mouri Tech Internship</h5>
-              <h6 class="card-subtitle mb-2 text-muted">May 2025 - July 2025</h6>
-              <ul>
-                <li>Developed second-hand product buying/selling platform remotely.</li>
-                <li>Achieved 90%+ accuracy for fake image and age detection using CNN.</li>
-                <li>Built resale price prediction model with R² = 0.87.</li>
-              </ul>
-              <a href="https://mouri-tech.com" target="_blank" class="btn btn-primary btn-sm mt-3">Visit Company</a>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card h-100 shadow-sm">
-            <div class="card-body">
-              <h5 class="card-title">Quiz Master</h5>
-              <h6 class="card-subtitle mb-2 text-muted">Jan 2025 - Mar 2025</h6>
-              <ul>
-                <li>Role-based web app using Flask, Jinja2, SQLite, SQLAlchemy.</li>
-                <li>Optimized backend for faster data retrieval and page loads.</li>
-              </ul>
-              <a href="https://github.com/ksandeep18/quiz-master" target="_blank" class="btn btn-primary btn-sm mt-3">View Project</a>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card h-100 shadow-sm">
-            <div class="card-body">
-              <h5 class="card-title">Bank Management System</h5>
-              <h6 class="card-subtitle mb-2 text-muted">Dec 2024 - Jan 2025</h6>
-              <ul>
-                <li>Developed core banking system backend with Python & SQLite.</li>
-                <li>Designed normalized relational database schema.</li>
-              </ul>
-              <a href="https://github.com/ksandeep18/bank-management-system" target="_blank" class="btn btn-primary btn-sm mt-3">View Project</a>
-            </div>
+<!-- Projects & Internships Section -->
+<section id="projects" class="py-5">
+  <div class="container">
+    <h2 class="text-center section-title">Projects & Internships</h2>
+    <div class="row row-cols-1 row-cols-md-2 g-4">
+      
+      <!-- Mouri Tech Internship -->
+      <div class="col">
+        <div class="card h-100 shadow-sm project-card">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">Mouri Tech Internship</h5>
+            <span class="badge bg-secondary mb-3 align-self-start">May 2025 – Jul 2025</span>
+            <ul class="flex-grow-1">
+              <li>Developed second-hand product marketplace remotely.</li>
+              <li>90%+ accuracy in fake image &amp; age detection via CNN.</li>
+              <li>Resale price prediction model with R² = 0.87.</li>
+            </ul>
+            <a href="https://mouri-tech.com"
+               target="_blank"
+               class="btn btn-outline-primary btn-sm mt-3 align-self-start">
+              Visit Company
+            </a>
           </div>
         </div>
       </div>
-    </div>
-  </section>
 
-  <!-- Contact Section -->
-  <section id="contact" class="py-5">
-    <div class="container">
-      <h2 class="mb-5 text-center text-white">Contact Me</h2>
-      <div class="row justify-content-center g-4">
-        <!-- Phone Card -->
-        <div class="col-12 col-md-4">
-          <div class="card bg-white text-dark h-100 shadow-sm">
-            <div class="card-body text-center">
-              <h5 class="card-title">Phone</h5>
-              <p class="card-text fs-5">+91 9032548457</p>
-            </div>
+      <!-- Quiz Master -->
+      <div class="col">
+        <div class="card h-100 shadow-sm project-card">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">Quiz Master</h5>
+            <span class="badge bg-secondary mb-3 align-self-start">Jan 2025 – Mar 2025</span>
+            <ul class="flex-grow-1">
+              <li>Role-based Flask app with Jinja2 &amp; SQLite.</li>
+              <li>Optimized queries for faster loads &amp; UX.</li>
+            </ul>
+            <a href="https://github.com/ksandeep18/quiz-master"
+               target="_blank"
+               class="btn btn-outline-primary btn-sm mt-3 align-self-start">
+              View Project
+            </a>
           </div>
         </div>
-        <!-- Emails Card -->
-        <div class="col-12 col-md-4">
-          <div class="card bg-white text-dark h-100 shadow-sm">
-            <div class="card-body text-center">
-              <h5 class="card-title">Emails</h5>
-              <p class="card-text">
-                <a href="mailto:ksandeepkumar34567@gmail.com" class="text-decoration-none text-primary">ksandeepkumar34567@gmail.com</a><br />
-                <a href="mailto:ks22meb0a24@student.nitw.ac.in" class="text-decoration-none text-primary">ks22meb0a24@student.nitw.ac.in</a>
-              </p>
-            </div>
+      </div>
+
+      <!-- Bank Management System -->
+      <div class="col">
+        <div class="card h-100 shadow-sm project-card">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">Bank Management System</h5>
+            <span class="badge bg-secondary mb-3 align-self-start">Dec 2024 – Jan 2025</span>
+            <ul class="flex-grow-1">
+              <li>Core banking backend with Python &amp; SQLite.</li>
+              <li>Normalized relational schema for ACID compliance.</li>
+            </ul>
+            <a href="https://github.com/ksandeep18/bank-management-system"
+               target="_blank"
+               class="btn btn-outline-primary btn-sm mt-3 align-self-start">
+              View Project
+            </a>
           </div>
         </div>
-        <!-- Links Card -->
-        <div class="col-12 col-md-4">
-          <div class="card bg-white text-dark h-100 shadow-sm">
-            <div class="card-body text-center">
-              <h5 class="card-title">Find Me Online</h5>
-              <p class="card-text">
-                <a href="https://github.com/ksandeep18" target="_blank" class="text-decoration-none text-primary">GitHub</a><br />
-                <a href="https://www.linkedin.com/in/sandeep-kumar-sk-/" target="_blank" class="text-decoration-none text-primary">LinkedIn</a><br />
-                <a href="https://leetcode.com/u/S___K___7/" target="_blank" class="text-decoration-none text-primary">LeetCode</a><br />
-                <a href="https://tool-tracker-front.onrender.com" target="_blank" class="text-decoration-none text-primary">ToolTracker Project</a>
-              </p>
-            </div>
+      </div>
+
+      <!-- Tool Tracker -->
+      <div class="col">
+        <div class="card h-100 shadow-sm project-card">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">Tool Tracker</h5>
+            <span class="badge bg-secondary mb-3 align-self-start">Mar 2025 – Present</span>
+            <ul class="flex-grow-1">
+              <li>Built with React.js, Node.js &amp; PostgreSQL.</li>
+              <li>Three roles: Super Admin, Tool Admin &amp; User.</li>
+              <li>Checkout/check-in UI; inventory CRUD in dashboard.</li>
+            </ul>
+            <a href="https://github.com/ksandeep18/tool-tracker"
+               target="_blank"
+               class="btn btn-outline-primary btn-sm mt-3 align-self-start">
+              View Project
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ICTSE-2026 Website -->
+      <div class="col">
+        <div class="card h-100 shadow-sm project-card">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">ICTSE-2026 Conference Site</h5>
+            <span class="badge bg-secondary mb-3 align-self-start">Jan 2025 – Feb 2025</span>
+            <ul class="flex-grow-1">
+              <li>Designed UI/UX with Bootstrap &amp; custom CSS.</li>
+              <li>Registration, schedule &amp; speaker modules.</li>
+            </ul>
+            <a href="https://github.com/ksandeep18/ictse-2026-website"
+               target="_blank"
+               class="btn btn-outline-primary btn-sm mt-3 align-self-start">
+              View Project
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- Contact Section -->
+<section id="contact" class="py-5">
+  <div class="container">
+    <h2 class="text-center mb-4">Contact Me</h2>
+    <div class="row row-cols-1 row-cols-md-3 g-4 mb-2">
+
+      <!-- Phone Card -->
+      <div class="col">
+        <div class="card h-100 border-primary">
+          <div class="card-body text-center">
+            <i class="bi bi-telephone-fill fs-1 text-primary mb-3"></i>
+            <h5 class="card-title">Phone</h5>
+            <p class="card-text fs-5">+91 90325 48457</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Email Card -->
+      <div class="col">
+        <div class="card h-100 border-secondary">
+          <div class="card-body text-center">
+            <i class="bi bi-envelope-fill fs-1 text-secondary mb-3"></i>
+            <h5 class="card-title">Email</h5>
+            <p class="card-text">
+              <a href="mailto:ksandeepkumar34567@gmail.com" class="text-decoration-none">
+                ksandeepkumar34567@gmail.com
+              </a><br>
+              <a href="mailto:ks22meb0a24@student.nitw.ac.in" class="text-decoration-none">
+                ks22meb0a24@student.nitw.ac.in
+              </a>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- GitHub Card -->
+      <div class="col">
+        <div class="card h-100 border-success">
+          <div class="card-body text-center">
+            <i class="bi bi-github fs-1 text-success mb-3"></i>
+            <h5 class="card-title">GitHub</h5>
+            <p class="card-text">
+              <a href="https://github.com/ksandeep18" target="_blank" class="text-decoration-none">
+                github.com/ksandeep18
+              </a>
+            </p>
           </div>
         </div>
       </div>
     </div>
-  </section>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+      <!-- Practice Platforms Card -->
+      <div class="col">
+        <div class="card h-100 border-warning">
+          <div class="card-body text-center">
+            <i class="bi bi-journal-code fs-1 text-warning mb-3"></i>
+            <h5 class="card-title">Practice</h5>
+            <p class="card-text">
+              <a href="https://leetcode.com/u/S___K___7/" target="_blank" class="d-block text-decoration-none">
+                <i class="bi bi-braces me-1"></i>LeetCode
+              </a>
+              <a href="https://www.codechef.com/users/ksandeep18" target="_blank" class="d-block text-decoration-none mt-1">
+                <i class="bi bi-file-code me-1"></i>CodeChef
+              </a>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Professional Network Card -->
+      <div class="col">
+        <div class="card h-100 border-info">
+          <div class="card-body text-center">
+            <i class="bi bi-person-badge-fill fs-1 text-info mb-3"></i>
+            <h5 class="card-title">Professional</h5>
+            <p class="card-text">
+              <a href="https://www.linkedin.com/in/sandeep-kumar-sk-/" target="_blank" class="d-block text-decoration-none">
+                <i class="bi bi-linkedin me-1"></i>LinkedIn
+              </a>
+              <a href="https://tool-tracker-front.onrender.com" target="_blank" class="d-block text-decoration-none mt-1">
+                <i class="bi bi-tools me-1"></i>ToolTracker
+              </a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+  <!-- Footer -->
+  <footer class="bg-dark text-white text-center py-4">
+    <div class="container">
+      <p class="mb-0">© 2025 Designed and Developed Sandeep Kumar</p>
+    </div>
 
   <!-- Bootstrap JS Bundle -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Typewriter effect for carousel
+    const typewriterTexts = [
+      "I am a Coder! ",
+      "Web Developer",
+      "Data Science Enthusiast",
+
+    ];
+    let twIndex = 0, charIndex = 0, isDeleting = false;
+    const twElement = document.getElementById('typewriter');
+    function typeWriterTick() {
+      const current = typewriterTexts[twIndex];
+      if (isDeleting) {
+        twElement.textContent = current.substring(0, charIndex--);
+        if (charIndex < 0) {
+          isDeleting = false;
+          twIndex = (twIndex + 1) % typewriterTexts.length;
+          setTimeout(typeWriterTick, 700);
+        } else {
+          setTimeout(typeWriterTick, 40);
+        }
+      } else {
+        twElement.textContent = current.substring(0, charIndex++);
+        if (charIndex > current.length) {
+          isDeleting = true;
+          setTimeout(typeWriterTick, 1200);
+        } else {
+          setTimeout(typeWriterTick, 80);
+        }
+      }
+    }
+    if (twElement) typeWriterTick();
+  </script>
 </body>
 </html>
